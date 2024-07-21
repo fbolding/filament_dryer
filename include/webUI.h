@@ -7,8 +7,17 @@
 #ifndef WEBUI_H
 #define WEBUI_H
 
+#include "dryerAPI.h"
+
 class webUI
 {
+    public:
+        webUI(dryerAPI* _dryerAPIPtr);
+        void setup();
+        void update();
+        
+    private:
+        dryerAPI* dryerAPIPtr = nullptr;
 
 };
 #endif

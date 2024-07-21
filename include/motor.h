@@ -36,7 +36,7 @@ class motor
         const int channel;
         bool status = false; // True if turned on, False if turned off
         bool direction = true; // True if forward, False if backward
-        float speed = 0; // Actually duty cycle of PWM, 0 for off and 100 for full speed
+        float speed = 0; // Actually duty cycle of PWM, 0 for off and 255 for full speed
         float PWMFrequency = 20000;
 
 };

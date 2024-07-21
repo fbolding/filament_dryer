@@ -29,9 +29,8 @@ class custom_timer
                 return true;
             } else {return false;}
         }
-
+        unsigned long previousTime = 0;
     private:
         unsigned long period = 1000;
-        unsigned long previousTime = 0;
 };
 #endif

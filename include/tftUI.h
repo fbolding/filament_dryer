@@ -23,13 +23,13 @@ void my_touchpad_read( lv_indev_drv_t * indev_driver, lv_indev_data_t * data );
 class tftUI
 {
     public:
-        tftUI();
-        void setup(dryerAPI* _dryerAPIPtr);
+        tftUI(dryerAPI* _dryerAPIPtr, const int _backlight_pin);
+        void setup();
         void update();
     
     private:
-        dryerAPI* dryerAPIPtr; // Pointer to API 
-        const int backlight_pin = 15; // Backlight pin
+        dryerAPI* dryerAPIPtr = nullptr; // Pointer to API 
+        const int backlight_pin; // Backlight pin
         custom_timer timerUI{5}; // Call function every X ms
 
 

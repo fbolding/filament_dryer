@@ -1,4 +1,8 @@
-
+//==============================================================
+// Filename : tftUI.cpp
+// Authors : Freek Bolding
+// Description : Source file for simple control through TFT screen
+//==============================================================
 
 #include "tftUI.h"
 
@@ -10,13 +14,11 @@ static lv_color_t buf[ screenWidth * screenHeight / 10 ];
 TFT_eSPI tft = TFT_eSPI(screenWidth, screenHeight); /* TFT instance */
 
 // Public Methods
-tftUI::tftUI(){
-    
+tftUI::tftUI(dryerAPI* _dryerAPIPtr, const int _backlight_pin): backlight_pin(backlight_pin){
+    dryerAPIPtr = _dryerAPIPtr; // Set pointer to control API
 }
 
-void tftUI::setup(dryerAPI* _dryerAPIPtr){
-    dryerAPIPtr = _dryerAPIPtr; // Set reference to control API
-
+void tftUI::setup(){
     // Turn on backlight
     pinMode(backlight_pin, OUTPUT);
     digitalWrite(backlight_pin, HIGH);
