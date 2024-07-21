@@ -1,0 +1,14 @@
+//==============================================================
+// Filename : webUI.h
+// Authors : Freek Bolding
+// Description : Header file for simple control through web interface
+//==============================================================
+
+#ifndef WEBUI_H
+#define WEBUI_H
+
+class webUI
+{
+
+};
+#endif
