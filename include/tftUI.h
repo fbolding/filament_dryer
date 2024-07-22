@@ -26,10 +26,11 @@ class tftUI
         tftUI(dryerAPI* _dryerAPIPtr, const int _backlight_pin);
         void setup();
         void update();
-    
+
+        int backlight_pin; // Backlight pin
     private:
         dryerAPI* dryerAPIPtr = nullptr; // Pointer to API 
-        const int backlight_pin; // Backlight pin
+        
         custom_timer timerUI{5}; // Call function every X ms
 
 

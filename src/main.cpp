@@ -45,6 +45,8 @@ void setup(){
     Serial.begin( 115200 );
     dht.setup(DHT_IN, DHTesp::DHT22);
     tftInterface.setup();
+    //pinMode(15, OUTPUT);
+    //digitalWrite(15, HIGH);
     //tempControl.setControlLimit(0, 40);
     //tempControl.setReference(30);
     //fan.setSpeed(50);
@@ -55,7 +57,9 @@ void loop(){
     //tempControl.update();
     tftInterface.update();
     webInterface.update();
+    
     if (serial_timer.hasElapsed()){
+        Serial.println(tftInterface.backlight_pin);
         Serial.println(api.getTemperature());
     }
 }

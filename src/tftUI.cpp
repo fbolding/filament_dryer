@@ -14,7 +14,7 @@ static lv_color_t buf[ screenWidth * screenHeight / 10 ];
 TFT_eSPI tft = TFT_eSPI(screenWidth, screenHeight); /* TFT instance */
 
 // Public Methods
-tftUI::tftUI(dryerAPI* _dryerAPIPtr, const int _backlight_pin): backlight_pin(backlight_pin){
+tftUI::tftUI(dryerAPI* _dryerAPIPtr, const int _backlight_pin): backlight_pin(_backlight_pin){
     dryerAPIPtr = _dryerAPIPtr; // Set pointer to control API
 }
 
