@@ -27,13 +27,11 @@ void motor::turnOff(){
 
 void motor::forward(){
     direction = true;
-    Serial.print(F("Set direction to FORWARD"));
     digitalWrite(pin_in1, HIGH);
     digitalWrite(pin_in2, LOW);
 }
 void motor::backward(){
     direction = false;
-    Serial.print(F("Set direction to BACKWARD"));
     digitalWrite(pin_in1, LOW);
     digitalWrite(pin_in2, HIGH);
 }
@@ -42,8 +40,6 @@ void motor::setSpeed(const float& _speed){
     if (_speed < 0){ speed = 0;}
     else if (_speed > 255){ speed = 255;}
     else { speed = _speed;}
-    Serial.print(F("Change PWM DutyCycle to "));
-    Serial.println(speed);
     ledcWrite(channel, speed);
 }
 void motor::setSpeedPlus(const float& _speed){
@@ -64,7 +60,5 @@ void motor::setSpeedPlus(const float& _speed){
 
 void motor::setPWMFrequency(const float& _PWMFrequency){
     PWMFrequency = _PWMFrequency;
-    Serial.print(F("Change PWM Frequency to "));
-    Serial.println(PWMFrequency);
     ledcChangeFrequency(channel, PWMFrequency, 8);
 }

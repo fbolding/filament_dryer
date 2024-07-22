@@ -23,7 +23,7 @@ void motorPID::update(){
     error = reference - current;
     error_derivative = (error-previous_error)/dt;
     error_integral += error*dt;
-    float control = gain_P*error + gain_D*error_derivative + gain_I*error_integral;
+    control = gain_P*error + gain_D*error_derivative + gain_I*error_integral;
     
     // Limit control signal to min/max values
     if (control < min_control) {

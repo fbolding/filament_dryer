@@ -23,6 +23,7 @@ float dryerAPI::getTemperature(){
 
 void dryerAPI::turnOnFan(){
     fanPtr->turnOn();
+    fanPtr->setSpeed(255);
 }
 
 void dryerAPI::turnOffFan(){

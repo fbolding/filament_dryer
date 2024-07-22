@@ -20,6 +20,7 @@ class motorPID
 
         void setReference(float _reference){ reference = _reference;};
         float getReference(){return reference;}
+        float getControl(){return control;}
         void setControlLimit(float _min_value, float _max_value);
 
         float gain_P = 1;
@@ -36,6 +37,7 @@ class motorPID
 
         float reference = 0;
         float current = 0;
+        float control; // Control value between 0-100, duty cycle
         float error = 0;
         float error_derivative = 0;
         float error_integral = 0;
