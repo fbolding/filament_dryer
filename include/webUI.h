@@ -7,7 +7,14 @@
 #ifndef WEBUI_H
 #define WEBUI_H
 
+#include <Arduino.h>
+#include <EEPROM.h>
+#include <ESPUI.h>
+#include <WiFi.h>
+#include <ESPmDNS.h>
 #include "dryerAPI.h"
+
+
 
 class webUI
 {
