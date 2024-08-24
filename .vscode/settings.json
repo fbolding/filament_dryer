@@ -4,5 +4,8 @@
         "titleBar.activeBackground": "#164743",
         "titleBar.activeForeground": "#F4FBFB"
     },
-    "cmake.ignoreCMakeListsMissing": true
+    "cmake.ignoreCMakeListsMissing": true,
+    "files.associations": {
+        "*.cpp_example": "c"
+    }
 }

@@ -28,7 +28,7 @@ class motorPID
         float gain_D = 0;
         bool stopControl = false;
     private:
-        float readSensor(){return sensorPtr->getTemperature();}
+        float readSensor();
         void sendControl(float control);
 
         motor* plantPtr = nullptr;

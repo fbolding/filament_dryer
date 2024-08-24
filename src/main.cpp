@@ -21,7 +21,7 @@ const int DHT_IN = 6;
 // Heater
 const int HEAT_IN1 = 3;
 const int HEAT_IN2 = 5;
-const int HEAT_EN = 9;
+const int HEAT_EN = 16;
 
 // Fan
 const int FAN_IN1 = 2;
@@ -45,25 +45,21 @@ custom_timer fan_timer(5000);
 
 void setup(){
     Serial.begin( 115200 );
-    delay(10000);
     Serial.println("Starting in 5 sec");
     delay(5000);
     dht.setup(DHT_IN, DHTesp::DHT22);
     tftInterface.setup();
     webInterface.setup();
-    api.turnOnFan();
-    api.turnOnHeater();
-    api.setTemperature(30);
 }
 
 void loop(){
     tempControl.update();
     tftInterface.update();
     webInterface.update();
-    
     if (serial_timer.hasElapsed()){
         Serial.println(dht.getTemperature());
         Serial.println(tempControl.getReference());
         Serial.println(tempControl.getControl());
     }
 }
+
